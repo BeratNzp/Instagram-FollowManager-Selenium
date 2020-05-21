@@ -37,7 +37,7 @@ Follow Manager
         elif int(processInput) == 2:
             print("\n\n")
             print("========================================================")
-            print("İşlem başladı. takipçi/takip edilen sayınıza bağlı olarak uzun sürebilir. Lütfen bekleyiniz.")
+            print("İşlem başladı. Bu işlem takipçi/takip edilen sayınıza bağlı olarak uzun sürebilir. Lütfen bekleyiniz.")
             followers = getMyFollowers.Instagram(username, password)
             followers.signIn()
             followers.getFollowers()
