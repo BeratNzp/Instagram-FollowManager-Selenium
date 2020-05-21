@@ -6,7 +6,7 @@ password = ""
 class __main__:
     while True:
         print(f"""========================================================
-Follow Manager
+FollowManager
 ========================================================
 
 1) Giriş Ayarları
