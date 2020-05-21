@@ -15,4 +15,4 @@ It then creates an object from your information and opens the Chrome Web Browser
 
 **So in order to run this project;
 You should download the version compatible with your browser version from this address and extract the "chromedriver" file to the main directory of the project.**
-https://www.selenium.dev/documentation/en/webdriver/driver_requirements/#quick-referen by
+https://www.selenium.dev/documentation/en/webdriver/driver_requirements/#quick-reference
