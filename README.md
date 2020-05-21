@@ -1,5 +1,5 @@
 # FollowManager BOT
-This project can send bot to instagram, and get what you want attribiutes,texts and values on that site.
+This project coded with Python's Selenium framework. The project can send bot to instagram, and get what you want attribiutes,texts and values on that site.
 
 ### How to install:
 ``pip3 install -r requirements.txt``   
