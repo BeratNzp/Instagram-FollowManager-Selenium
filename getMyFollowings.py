@@ -25,9 +25,9 @@ class Instagram:
 
     def getMyFollowings(self):
         self.browser.get(f"https://www.instagram.com/{self.username}/")
-        time.sleep(2)
+        time.sleep(4)
         myFollowingsLink = self.browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/header/section/ul/li[3]/a").click()
-        time.sleep(2)
+        time.sleep(4)
 
         dialog = self.browser.find_element_by_css_selector("div[role=dialog] ul")
         myFollowingsCount = len(dialog.find_elements_by_css_selector("li"))
@@ -55,21 +55,16 @@ class Instagram:
                 break
             else:
                 myFollowingsCount = newCount
-                time.sleep(5)
+                time.sleep(1)
                 dialog.click()
-                time.sleep(2)
-        print(f"Your Followings Count: {myFollowingsCount}")
+                time.sleep(1)
         myFollowings = dialog.find_elements_by_css_selector("li")
 
-        myFollowingsList = []
-        for user in myFollowings:
-            link = urlparse(user.find_element_by_css_selector("a").get_attribute("href"))
-            parsedLink = link[2]
-            cutSlashes = parsedLink[1:-1]
-            myFollowingsList.append(cutSlashes)
-
         with open("myFollowings.txt","w",encoding="UTF-8") as file:
-            for item in myFollowingsList:
-                file.write(item + "\n")
+            for user in myFollowings:
+                link = urlparse(user.find_element_by_css_selector("a").get_attribute("href"))
+                parsedLink = link[2]
+                cutSlashes = parsedLink[1:-1]
+                file.write(cutSlashes + "\n")
 
-
+        print(f"Takip Ettiğiniz: {myFollowingsCount}")
