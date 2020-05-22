@@ -2,9 +2,9 @@
 This project coded with Python's Selenium framework. The project can send bot to instagram, and get what you want attribiutes,texts and values on that site.
 
 ### How to install:
-``virtualenv mypython``
-``source venv/bin/activate``
-``pip3 install -r requirements.txt``
+``virtualenv mypython``  
+``source venv/bin/activate``  
+``pip3 install -r requirements.txt``  
 
 ### How it works:
 This bot asks for your username and password for your instagram account. However, this does not save your information.
