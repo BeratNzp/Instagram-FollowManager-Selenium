@@ -2,6 +2,7 @@ import getMyFollowers,getMyFollowings,whoDontFollowMe,iDontFollow
 
 username = ""
 password = ""
+messageBox = []
 
 class __main__:
     while True:
@@ -16,6 +17,9 @@ FollowManager
 
 0) Çıkış
 ========================================================""")
+        for message in messageBox:
+            print(message)
+        message=[]
         processInput = input()
         userDebug = "n"
 
@@ -35,23 +39,27 @@ FollowManager
                 continue
 
         elif int(processInput) == 2:
-            print("\n\n")
-            print("========================================================")
-            print("İşlem başladı. Bu işlem takipçi/takip edilen sayınıza bağlı olarak uzun sürebilir. Lütfen bekleyiniz.")
-            followers = getMyFollowers.Instagram(username, password)
-            followers.signIn()
-            followers.getFollowers()
-            followers.browser.close()
+            if userDebug == "y":
+                print("\n\n")
+                print("========================================================")
+                print("İşlem başladı. Bu işlem takipçi/takip edilen sayınıza bağlı olarak uzun sürebilir. Lütfen bekleyiniz.")
+                followers = getMyFollowers.Instagram(username, password)
+                followers.signIn()
+                followers.getFollowers()
+                followers.browser.close()
 
-            followings = getMyFollowings.Instagram(username, password)
-            followings.signIn()
-            followings.getMyFollowings()
-            followings.browser.close()
+                followings = getMyFollowings.Instagram(username, password)
+                followings.signIn()
+                followings.getMyFollowings()
+                followings.browser.close()
 
-            print("Bağlantılarınız çekildi.")
-            print("========================================================")
-            print("\n\n")
-            continue
+                messageBox.append("Bağlantılarınız çekildi.")
+                print("========================================================")
+                print("\n\n")
+                continue
+            elif userDebug == "n":
+                messageBox.append("Henüz giriş ayarlarınızı tanımlamadınız.")
+                continue
 
         elif int(processInput) == 3:
             print("\n\n")
