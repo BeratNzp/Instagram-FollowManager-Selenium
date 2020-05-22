@@ -2,8 +2,8 @@
 This project coded with Python's Selenium framework. The project can send bot to instagram, and get what you want attribiutes,texts and values on that site.
 
 ### How to install:
-``pip install --upgrade pip``  
-``pip install virtualenv``  
+``$(which pip) install --upgrade pip``  
+``$(which pip) install virtualenv``  
 ``virtualenv venv``  
 ``source venv/bin/activate``  
 ``pip install -r requirements.txt``  
