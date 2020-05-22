@@ -14,7 +14,7 @@ class Instagram:
 
     def signIn(self):
         self.browser.get("https://www.instagram.com/accounts/login/")
-        time.sleep(4)
+        time.sleep(5)
         usernameInput = self.browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/article/div/div[1]/div/form/div[2]/div/label/input")
         passwordInput = self.browser.find_element_by_xpath("//*[@id='react-root']/section/main/div/article/div/div[1]/div/form/div[3]/div/label/input")
 
@@ -67,4 +67,4 @@ class Instagram:
                 cutSlashes = parsedLink[1:-1]
                 file.write(cutSlashes + "\n")
 
-        print(f"Takipçi Sayınız: {followersCount}")
+        messageBox.append(f"Takipçi Sayınız: {followersCount}")

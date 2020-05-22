@@ -17,7 +17,7 @@ def showDifferents():
         if dif not in myFollowingsList:
             count+=1
             print(dif)
-    print(f"Sizi takip eden {count} kişiyi takip etmiyorsunuz.")
+    print(f"\nSizi takip eden {count} kişiyi takip etmiyorsunuz.")
     myFollowers.close()
     myFollowings.close()
 

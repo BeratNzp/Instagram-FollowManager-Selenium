@@ -1,7 +1,8 @@
-import getMyFollowers,getMyFollowings,whoDontFollowMe,iDontFollow
+import getMyFollowers,getMyFollowings,whoDontFollowMe,iDontFollow,getpass
 
 username = ""
 password = ""
+userDebug = "y"
 messageBox = []
 
 class __main__:
@@ -19,11 +20,10 @@ FollowManager
 ========================================================""")
         for message in messageBox:
             print(message)
-        message=[]
+            messageBox.remove(message)
         processInput = input()
-        userDebug = "n"
 
-        if int(processInput) == 1 and userDebug == "n":
+        if int(processInput) == 1:
             if username and password:
                 userDebug = input("Kullanıcı adı ve parola tanımlandı. Kullanıcıyı kaldırmak istiyorsanız 'y' yazin. Devam etmek için 'n' yazin")
                 if userDebug == "y":
@@ -34,12 +34,12 @@ FollowManager
             else:
                 print("Kullanıcı adı ve parolanızı tanımlayın")
                 username = input("Kullanıcı Adı: ")
-                password = input("Parola: ")
+                password = getpass.getpass("Parola: ")
                 userDebug = "n"
                 continue
 
         elif int(processInput) == 2:
-            if userDebug == "y":
+            if userDebug == "n":
                 print("\n\n")
                 print("========================================================")
                 print("İşlem başladı. Bu işlem takipçi/takip edilen sayınıza bağlı olarak uzun sürebilir. Lütfen bekleyiniz.")
@@ -57,7 +57,7 @@ FollowManager
                 print("========================================================")
                 print("\n\n")
                 continue
-            elif userDebug == "n":
+            elif userDebug == "y":
                 messageBox.append("Henüz giriş ayarlarınızı tanımlamadınız.")
                 continue
 
@@ -67,6 +67,7 @@ FollowManager
             whoDontFollowMe.showDifferents()
             print("========================================================")
             print("\n\n")
+            messageBox.append("Çıktınızı görmek için yukarı kaydırın.")
             continue
 
         elif int(processInput) == 4:
@@ -75,6 +76,7 @@ FollowManager
             iDontFollow.showDifferents()
             print("========================================================")
             print("\n\n")
+            messageBox.append("Çıktınızı görmek için yukarı kaydırın.")
             continue
 
         elif int(processInput) == 0:
