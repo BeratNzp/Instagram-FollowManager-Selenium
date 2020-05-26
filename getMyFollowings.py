@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
 from urllib.parse import urlparse
+from manager import messageBox
 
 class Instagram:
     def __init__(self,username,password):
