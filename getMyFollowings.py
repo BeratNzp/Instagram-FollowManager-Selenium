@@ -3,7 +3,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
 from urllib.parse import urlparse
-from manager import messageBox
 
 class Instagram:
     def __init__(self,username,password):
@@ -68,4 +67,4 @@ class Instagram:
                 cutSlashes = parsedLink[1:-1]
                 file.write(cutSlashes + "\n")
 
-        messageBox.append(f"Takip Ettiğiniz: {myFollowingsCount}")
+        print(f"Takip Ettiğiniz: {myFollowingsCount}")
